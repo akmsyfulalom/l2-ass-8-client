@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Providers } from "@/lib/Provider";
+import NavbarFooterProvider from "@/lib/NavbarFooterProvider";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -20,14 +20,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Providers>
+  
       <html lang="en">
-      <body className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}>{children}</body>
-    </html>
-    </Providers>
+        <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable
+          )}
+        >
+          <NavbarFooterProvider>
+          {children}
+          </NavbarFooterProvider>
+         
+        </body>
+      </html>
     
   );
 }
