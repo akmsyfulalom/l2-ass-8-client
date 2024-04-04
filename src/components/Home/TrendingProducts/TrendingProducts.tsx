@@ -37,9 +37,7 @@ const TrendingProducts = async () => {
           </Link>
         </div>
         <p className="mb-10">
-          Explore our collection of trending products at LapLux, <br /> where
-          innovation and technology converge to bring you the latest in laptop
-          excellence.
+        Discover our curated selection at AKM COTH, where innovation and style blend seamlessly to offer you the latest in fashion excellence. Explore trending clothing and accessories designed to elevate your wardrobe.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-items-center items-start">
           {sortedClothData.slice(0, 6).map((cloth: any) => (
