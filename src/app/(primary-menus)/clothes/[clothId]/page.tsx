@@ -57,12 +57,12 @@ const ClothDetail = async ({ params }: TClothId) => {
                 </div>
                 <div className="flex items-center gap-5">
                   <p className=" text-xl pe-10 border-e-2 border-e-zinc-900">
-                    <span className="text-2xl font-bold">৳</span>
+                    <span className="text-2xl font-bold">$</span>
                     <del className="text-slate-600">
                       {cloth?.data?.price}
                     </del>{" "}
                     <span>
-                      <span className="text-2xl font-bold">৳</span>
+                      <span className="text-2xl font-bold">$</span>
                       {discountedPrice}
                     </span>
                   </p>
@@ -75,11 +75,9 @@ const ClothDetail = async ({ params }: TClothId) => {
               </div>
             </div>
             <ul className="px-5 mt-5">
-              <li className="list-disc">Processor: {cloth.data?.processor}</li>
-              <li className="list-disc">RAM: {cloth?.data?.ram}</li>
-              <li className="list-disc">SSD: {cloth?.data?.ssd}</li>
-              <li className="list-disc">Display: {cloth?.data?.display}</li>
-              <li className="list-disc">OS: {cloth?.data?.os}</li>
+              <li className="list-disc">brand: {cloth.data?.brand}</li>
+              <li className="list-disc">size: {cloth?.data?.size}</li>
+              
             </ul>
             <div className="mt-10">
               <p className="mb-2 flex items-center gap-2">
@@ -95,16 +93,9 @@ const ClothDetail = async ({ params }: TClothId) => {
             </div>
           </div>
         </div>
-        <div className="mt-10">
+        <div className="my-10">
           <h3 className="text-2xl font-bold mb-5">Description</h3>
           <p className="text-slate-700">{cloth?.data?.description}</p>
-          <ul className="px-5 mt-5">
-            <li className="list-disc">Processor: {cloth.pdata?.rocessor}</li>
-            <li className="list-disc">RAM: {cloth?.data?.ram}</li>
-            <li className="list-disc">SSD: {cloth?.data?.ssd}</li>
-            <li className="list-disc">Display: {cloth?.data?.display}</li>
-            <li className="list-disc">OS: {cloth?.data?.os}</li>
-          </ul>
         </div>
       </Container>
     </div>
