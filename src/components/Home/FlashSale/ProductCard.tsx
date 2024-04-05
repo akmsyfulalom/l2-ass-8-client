@@ -3,11 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ProductCard = ({ cloth }: { cloth: any }) => {
-  const discountedPrice = (cloth?.price - cloth?.price * (cloth?.discount / 100)).toFixed(2);
+  const discountedPrice = (
+    cloth?.price -
+    cloth?.price * (cloth?.discount / 100)
+  ).toFixed(2);
   return (
     <Link href={`/cloth/${cloth?._id}`}>
-      <div className="border-2 rounded-md w-[280px] bg-white overflow-hidden">
-        <div className="relative bg-[#ffffff] p-5 w-[280px] h-[360px] border-b-2 rounded-t-md flex justify-center items-center group overflow-hidden">
+      <div className="border-2 rounded-md max-w-[280px] bg-white overflow-hidden">
+        <div className="relative bg-[#ffffff] p-5 max-w-[280px] max-h-[300px] border-b-2 rounded-t-md flex justify-center items-center group overflow-hidden">
           <Image
             src={cloth?.image}
             alt="product-image"
