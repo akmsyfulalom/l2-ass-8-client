@@ -1,4 +1,3 @@
-
 import {
   Carousel,
   CarouselContent,
@@ -6,9 +5,8 @@ import {
 } from "@/components/ui/carousel";
 import SliderProductCard from "./SliderProductCard";
 
-
 const Slider = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/cloth", {
+  const res = await fetch("https://l2-ass-8-server.vercel.app/api/v1/cloth", {
     next: {
       revalidate: 30,
     },

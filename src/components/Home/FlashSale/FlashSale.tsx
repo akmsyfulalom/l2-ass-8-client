@@ -3,10 +3,10 @@ import Container from "@/components/ui/container";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import ProductCard from "./ProductCard";
+import ProductCard from "../../shared/ProductCard";
 
 const FlashSale = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/cloth", {
+  const res = await fetch("https://l2-ass-8-server.vercel.app/api/v1/cloth", {
     next: {
       revalidate: 30,
     },
@@ -14,14 +14,14 @@ const FlashSale = async () => {
 
   const clothData = await res.json();
 
-
-  const flashSaleCloth = clothData?.data?.filter((cloth: any) => cloth?.flashSale);
+  const flashSaleCloth = clothData?.data?.filter(
+    (cloth: any) => cloth?.flashSale
+  );
 
   const sortedFlashSaleCloth = flashSaleCloth?.sort(
     (a: any, b: any) =>
       new Date(b?.createdAt).getTime() - new Date(a?.createdAt).getTime()
   );
-
 
   return (
     <div className="w-full mt-20">

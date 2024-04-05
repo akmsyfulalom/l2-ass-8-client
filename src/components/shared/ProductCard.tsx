@@ -8,7 +8,7 @@ const ProductCard = ({ cloth }: { cloth: any }) => {
     cloth?.price * (cloth?.discount / 100)
   ).toFixed(2);
   return (
-    <Link href={`/cloth/${cloth?._id}`}>
+    <Link href={`/clothes/${cloth?._id}`}>
       <div className="border-2 rounded-md max-w-[280px] bg-white overflow-hidden">
         <div className="relative bg-[#ffffff] p-5 max-w-[280px] max-h-[300px] border-b-2 rounded-t-md flex justify-center items-center group overflow-hidden">
           <Image

@@ -4,10 +4,10 @@ import Container from "@/components/ui/container";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import ProductCard from "../FlashSale/ProductCard";
+import ProductCard from "../../shared/ProductCard";
 
 const TrendingProducts = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/cloth", {
+  const res = await fetch("https://l2-ass-8-server.vercel.app/api/v1/cloth", {
     next: {
       revalidate: 30,
     },
@@ -37,7 +37,10 @@ const TrendingProducts = async () => {
           </Link>
         </div>
         <p className="mb-10">
-        Discover our curated selection at AKM COTH, where innovation and style blend seamlessly to offer you the latest in fashion excellence. Explore trending clothing and accessories designed to elevate your wardrobe.
+          Discover our curated selection at AKM COTH, where innovation and style
+          blend seamlessly to offer you the latest in fashion excellence.
+          Explore trending clothing and accessories designed to elevate your
+          wardrobe.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-items-center items-start">
           {sortedClothData.slice(0, 6).map((cloth: any) => (

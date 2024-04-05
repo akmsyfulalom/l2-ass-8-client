@@ -1,4 +1,4 @@
-import ProductCard from "@/components/Home/FlashSale/ProductCard";
+import ProductCard from "@/components/shared/ProductCard";
 import ProoductFilter from "@/components/products/products-filter";
 import Container from "@/components/ui/container";
 
@@ -13,14 +13,14 @@ const AllClothesPage = async ({
   if (searchParams.brand) {
     brand = searchParams.brand;
     const res = await fetch(
-      `http://localhost:5000/api/v1/cloth/brand/${brand}`,
+      `https://l2-ass-8-server.vercel.app/api/v1/cloth/brand/${brand}`,
       {
         cache: "no-store",
       }
     );
     data = await res.json();
   } else {
-    const res = await fetch("http://localhost:5000/api/v1/cloth", {
+    const res = await fetch("https://l2-ass-8-server.vercel.app/api/v1/cloth", {
       cache: "no-store",
     });
     data = await res.json();
@@ -34,7 +34,13 @@ const AllClothesPage = async ({
           Our Collection Of {brand} Cloth
         </h1>
         <p className=" mb-14">
-        Step into the world of fashion with AKM Cloth, where style meets comfort and quality. Our curated collection offers a wide range of trendy and timeless clothing pieces for every occasion. From casual wear to formal attire, we strive to provide clothing that reflects your unique personality and enhances your sense of style. Experience the joy of shopping with AKM Cloth, where fashion meets affordability and customer satisfaction is our top priority.
+          Step into the world of fashion with AKM Cloth, where style meets
+          comfort and quality. Our curated collection offers a wide range of
+          trendy and timeless clothing pieces for every occasion. From casual
+          wear to formal attire, we strive to provide clothing that reflects
+          your unique personality and enhances your sense of style. Experience
+          the joy of shopping with AKM Cloth, where fashion meets affordability
+          and customer satisfaction is our top priority.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-8 items-start gap-5">
           <div className="lg:col-span-2">
