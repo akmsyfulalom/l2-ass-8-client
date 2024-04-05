@@ -11,13 +11,13 @@ interface TClothId {
   };
 }
 
-export const generateStaticParams = async () => {
-  const res = await fetch("https://l2-ass-8-server.vercel.app/api/v1/cloth");
-  const clothes = await res.json();
-  return clothes?.data?.slice(0, 10).map((cloth: any) => ({
-    TClothId: cloth?._id,
-  }));
-};
+// export const generateStaticParams = async () => {
+//   const res = await fetch("https://l2-ass-8-server.vercel.app/api/v1/cloth");
+//   const clothes = await res.json();
+//   return clothes?.data?.slice(0, 10).map((cloth: any) => ({
+//     TClothId: cloth?._id,
+//   }));
+// };
 
 const ClothDetail = async ({ params }: TClothId) => {
   const res = await fetch(
